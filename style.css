@@ -1,51 +1,76 @@
 body {
   text-align: center;
-  font-family: 'Comic Sans MS', cursive;
-  background: linear-gradient(to bottom, #ffe6f0, #f0f8ff);
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #e6f3ff, #ffe6f0);
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h3 {
+  color: #ff66a3;
 }
 
 #gameArea {
   position: relative;
-  width: 400px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   margin: 0 auto;
-  border: 3px solid #ff66a3;
-  background-color: #fff0f5;
+  border: 4px solid #ff66a3;
+  background: #87ceeb;
+  border-radius: 15px;
   overflow: hidden;
-  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 #bubu {
-  width: 50px;
-  height: 50px;
-  background-color: #ff99cc;
+  width: 40px;
+  height: 40px;
+  background: #ff99cc url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23ff4d94"/></svg>') center/contain no-repeat;
   border-radius: 50%;
   position: absolute;
-  bottom: 10px;
-  left: 175px;
-  transition: left 0.1s;
+  top: 280px;
+  left: 100px;
+  transition: top 0.1s;
 }
 
 #dudu {
-  width: 50px;
-  height: 50px;
-  background-color: #cc99ff;
+  width: 40px;
+  height: 40px;
+  background: #cc99ff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23994dff"/></svg>') center/contain no-repeat;
   border-radius: 50%;
   position: absolute;
-  bottom: 10px;
-  left: 75px;
-  transition: left 0.1s;
+  top: 280px;
+  left: 150px;
+  transition: top 0.1s;
 }
 
-#heart {
+.pipe {
+  width: 60px;
+  background: #228b22;
+  position: absolute;
+  right: -60px;
+}
+
+.pipe.top {
+  top: 0;
+  border-bottom: 4px solid #006400;
+}
+
+.pipe.bottom {
+  bottom: 0;
+  border-top: 4px solid #006400;
+}
+
+#powerUp {
   width: 30px;
   height: 30px;
-  background-color: red;
-  clip-path: polygon(50% 0%, 61% 9%, 70% 18%, 78% 30%, 82% 40%, 85% 50%, 82% 60%, 78% 70%, 70% 82%, 50% 100%, 30% 82%, 22% 70%, 18% 60%, 15% 50%, 18% 40%, 22% 30%, 30% 18%, 39% 9%);
+  background: gold;
+  border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 185px;
-  animation: pulse 0.5s infinite alternate;
+  top: -50px;
+  left: 300px;
+  display: none;
+  animation: glow 0.5s infinite alternate;
 }
 
 #winScreen {
@@ -59,7 +84,7 @@ body {
   border: 2px solid #ff66a3;
 }
 
-@keyframes pulse {
+@keyframes glow {
   from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  to { transform: scale(1.2); }
 }
